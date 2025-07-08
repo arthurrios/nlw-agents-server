@@ -1,3 +1,4 @@
+// import 'dotenv/config'
 import { fastifyCors } from '@fastify/cors'
 import { fastify } from 'fastify'
 import {
@@ -20,4 +21,6 @@ app.get('/health', () => {
   return 'OK'
 })
 
-app.listen({ port: env.PORT })
+app.listen({ port: env.PORT }).then(() => {
+  console.log(`HTTP server running on port ${env.PORT}`)
+})
